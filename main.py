@@ -37,7 +37,7 @@ st.markdown(
     """
     <div style="text-align: center;">
         <h1 style="color: blue; font-size: 48px;">CARBON INTENSITY INDICATOR (CII)</h1>
-        <h3 style="color: green; font-size: 24px;">
+        <h3 style="color: green; font-size: 20px;">
             The Carbon Intensity Indicator (CII) regulation is enforced as per Regulation 28 of MARPOL Annex VI,
             which mandates that ships must calculate and report their annual carbon intensity.
             The CII is calculated based on the ship's fuel consumption and distance traveled,
