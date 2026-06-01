@@ -13,4 +13,8 @@ It was officially adopted by the Marine Environment Protection Committee (MEPC) 
 in June 2021 under Resolution MEPC.328(76). The regulation is set to be implemented starting from January 1, 2023, 
 with the first annual reporting due by March 31, 2024. The CII regulation is part of the International Maritime Organization's (IMO)
 broader strategy to reduce greenhouse gas emissions from ships and combat climate change.
-      
+
+You may find auth.py, logger.py, autheticator libraries, Groq API connectors in the application, although it has not been used in this application.
+
+It has been added if necessary to scale it up to connect LLM for inferences and for application security if it needs to be made available for selected profiles.
+
