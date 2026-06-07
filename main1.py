@@ -17,8 +17,8 @@ st.set_page_config(layout='wide')
 st.markdown(
     """
     <div style="text-align: center;">
-        <h1 style="color: blue; font-size: 48px;">CARBON INTENSITY INDICATOR (CII)</h1>
-        <h3 style="color: green; font-size: 20px;">
+        <h1 style="color: blue; font-size: 36px;">CARBON INTENSITY INDICATOR (CII)</h1>
+        <h3 style="color: green; font-size: 16px;">
             The Carbon Intensity Indicator (CII) regulation is enforced as per Regulation 28 of MARPOL Annex VI,
             which mandates that ships must calculate and report their annual carbon intensity.
             The CII is calculated based on the ship's fuel consumption and distance traveled,
@@ -29,7 +29,7 @@ st.markdown(
             and they must report their CII annually to the relevant authorities. 
             Non-compliance with CII requirements can result in penalties, including fines and restrictions on port access.
         </h3>
-        <h3 style="color: red; font-size: 20px;">
+        <h3 style="color: red; font-size: 16px;">
             It was officially adopted by the Marine Environment Protection Committee (MEPC) during its 76th session (MEPC 76) 
             in June 2021 under Resolution MEPC.328(76). The regulation is set to be implemented starting from January 1, 2023, 
             with the first annual reporting due by March 31, 2024. The CII regulation is part of the International Maritime Organization's (IMO)
