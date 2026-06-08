@@ -270,7 +270,7 @@ with col_ded2:
                                 help="Standard corrections (G3 guidelines). Automated Warning: This field is disabled if dedicated Shuttle Tanker deductions are active to avoid double-counting.")
 with col_ded3:
     fc_electrical_others = st.number_input("Aux Engines / Generative Cargo ($FC_{\\text{electrical}} + FC_{\\text{others}}$) [MT]:", 
-                                           min_value=0.0, step=1, disabled=disable_sub_meters,
+                                           min_value=0.0, step=1.0, disabled=disable_sub_meters,
                                            help="Standard corrections (G3 guidelines). Automated Warning: This field is disabled if dedicated Shuttle Tanker deductions are active to avoid double-counting.")
 
 if disable_sub_meters:
