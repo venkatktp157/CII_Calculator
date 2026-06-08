@@ -262,11 +262,11 @@ disable_sub_meters = ("Dedicated Shuttle Tanker" in tanker_mode) or ("STS Voyage
 
 with col_ded1:
     fc_voyage_tons = st.number_input("Exempted Voyages/Trials ($FC_{\\text{voyage}}$) [MT]:", 
-                                        min_value=0.0, step=10,
+                                        min_value=0.0, step=10.0,
                                         help="Deductions for trials, or fuel used during MARPOL Regulation 28.14 exempted voyages.")
 with col_ded2:
     fc_boiler = st.number_input("Cargo Heating / Boiler ($FC_{\\text{boiler}}$) [MT]:", 
-                                min_value=0.0, step=5, disabled=disable_sub_meters,
+                                min_value=0.0, step=5.0, disabled=disable_sub_meters,
                                 help="Standard corrections (G3 guidelines). Automated Warning: This field is disabled if dedicated Shuttle Tanker deductions are active to avoid double-counting.")
 with col_ded3:
     fc_electrical_others = st.number_input("Aux Engines / Generative Cargo ($FC_{\\text{electrical}} + FC_{\\text{others}}$) [MT]:", 
