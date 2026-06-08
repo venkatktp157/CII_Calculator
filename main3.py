@@ -160,7 +160,7 @@ a = ship_data[ship_type]["ranges"][capacity_range]["a"]
 c = ship_data[ship_type]["ranges"][capacity_range]["c"]
 unit = ship_data[ship_type]["unit"]
 
-capacity = st.number_input(f"Enter Ship Capacity ({unit}):", min_value=1.0, step=1.0, value=0.0)
+capacity = st.number_input(f"Enter Ship Capacity ({unit}):", min_value=1.0, step=1.0, value=1.0)
 
 # Tanker Operational Framework Selection Logic
 tanker_mode = "Standard"
