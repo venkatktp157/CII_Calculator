@@ -19,5 +19,10 @@ You may find auth.py, logger.py, authenticator libraries, Groq API connectors in
 It has been added if necessary, to scale it up to connect LLM for inferences and for application security, if it needs to be made available for selected profiles.
 
 There are two application files in this code:
-main.py - Codes in this only provide CII ratings based on single fuel connsumption inputs.
+main.py - Codes in this only provide CII ratings based on single fuel consumption inputs.
+
 main1.py -Codes in this provide CII ratings based on multi fuel consumption inputs.
+
+main2.py - Codes in this provide CII ratings with shuttle tanker additions (but without any corrections)
+
+main3.py - Codes in this provide CII ratings with shuttle tanker(both STS & voyage corrections) and applied corrections along with coefficients to give a better CII ratings.
