@@ -282,7 +282,7 @@ total_co2_tons = 0.0
 
 for idx, (fuel_name, details) in enumerate(fuel_data.items()):
     with col_fuel1 if idx % 2 == 0 else col_fuel2:
-        consumed = st.number_input(f"{fuel_name} Total Fuel ($FC_j$) [MT]:", min_value=0.0, step=10, key=f"fuel_{idx}")
+        consumed = st.number_input(f"{fuel_name} Total Fuel ($FC_j$) [MT]:", min_value=0.0, step=10.0, key=f"fuel_{idx}")
         
         if consumed > 0:
             # Check if specialized tanker multipliers override raw consumption lines
