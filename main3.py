@@ -247,7 +247,7 @@ st.subheader("Attained CII Calculation Inputs (Voyage Adjustments)")
 col_dist1, col_dist2 = st.columns(2)
 with col_dist1:
     distance_traveled = st.number_input("Enter Total Distance Traveled (D_t) [NM]:", 
-                                        min_value=0.0, step=0.1, value=10000.0
+                                        min_value=0.0, step=0.1, value=0.0
                                         )
 with col_dist2:
     distance_exempted = st.number_input("Enter Exempted Voyage Distance (D_x) [NM]:", 
@@ -262,15 +262,15 @@ disable_sub_meters = ("Dedicated Shuttle Tanker" in tanker_mode) or ("STS Voyage
 
 with col_ded1:
     fc_voyage_tons = st.number_input("Exempted Voyages/Trials ($FC_{\\text{voyage}}$) [MT]:", 
-                                        min_value=0.0, step=0.1,
+                                        min_value=0.0, step=10,
                                         help="Deductions for trials, or fuel used during MARPOL Regulation 28.14 exempted voyages.")
 with col_ded2:
     fc_boiler = st.number_input("Cargo Heating / Boiler ($FC_{\\text{boiler}}$) [MT]:", 
-                                min_value=0.0, step=0.1, disabled=disable_sub_meters,
+                                min_value=0.0, step=5, disabled=disable_sub_meters,
                                 help="Standard corrections (G3 guidelines). Automated Warning: This field is disabled if dedicated Shuttle Tanker deductions are active to avoid double-counting.")
 with col_ded3:
     fc_electrical_others = st.number_input("Aux Engines / Generative Cargo ($FC_{\\text{electrical}} + FC_{\\text{others}}$) [MT]:", 
-                                           min_value=0.0, step=0.1, disabled=disable_sub_meters,
+                                           min_value=0.0, step=1, disabled=disable_sub_meters,
                                            help="Standard corrections (G3 guidelines). Automated Warning: This field is disabled if dedicated Shuttle Tanker deductions are active to avoid double-counting.")
 
 if disable_sub_meters:
@@ -282,7 +282,7 @@ total_co2_tons = 0.0
 
 for idx, (fuel_name, details) in enumerate(fuel_data.items()):
     with col_fuel1 if idx % 2 == 0 else col_fuel2:
-        consumed = st.number_input(f"{fuel_name} Total Fuel ($FC_j$) [MT]:", min_value=0.0, step=0.1, key=f"fuel_{idx}")
+        consumed = st.number_input(f"{fuel_name} Total Fuel ($FC_j$) [MT]:", min_value=0.0, step=10, key=f"fuel_{idx}")
         
         if consumed > 0:
             # Check if specialized tanker multipliers override raw consumption lines
@@ -307,13 +307,13 @@ st.caption("These parameters default to 1.0 unless specified in the vessel's app
 col_coef1, col_coef2, col_coef3, col_coef4 = st.columns(4)
 
 with col_coef1:
-    f_i = st.number_input("Ice Class Capacity Factor ($f_i$):", min_value=1.0, max_value=2.0, value=1.0, step=0.001)
+    f_i = st.number_input("Ice Class Capacity Factor ($f_i$):", min_value=1.0, max_value=2.0, value=1.0, step=0.1)
 with col_coef2:
-    f_m = st.number_input("Ice Drag Factor ($f_m$):", min_value=1.0, max_value=2.0, value=1.0, step=0.001)
+    f_m = st.number_input("Ice Drag Factor ($f_m$):", min_value=1.0, max_value=2.0, value=1.0, step=0.1)
 with col_coef3:
-    f_c = st.number_input("Chemical Cubic Factor ($f_c$):", min_value=1.0, max_value=2.0, value=1.0, step=0.001)
+    f_c = st.number_input("Chemical Cubic Factor ($f_c$):", min_value=1.0, max_value=2.0, value=1.0, step=0.1)
 with col_coef4:
-    f_iVSE = st.number_input("Structural Enhancement ($f_{iVSE}$):", min_value=1.0, max_value=2.0, value=1.0, step=0.001)
+    f_iVSE = st.number_input("Structural Enhancement ($f_{iVSE}$):", min_value=1.0, max_value=2.0, value=1.0, step=0.1)
 
 # --- UPDATED CONSOLIDATED CALCULATION ENGINE ---
 if total_co2_tons > 0 and effective_distance > 0 and capacity > 0:
